@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-3 text-center mb-5">Cupcake:</h1>
+    <div class="row justify-content-center" id="cupcake-details">
+        <div class="col-6">
+            <a href="/cupcakes/{{cupcake.id}}">
+              <div class="card text-white bg-primary mb-3">
+                <div class="card-header">{{cupcake.flavor}}
+                <button type="button" class="close" id="{{cupcake.id}}" data-dismiss="card">&times;</button>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{{cupcake.size}} {{cupcake.flavor}} cupcake that has a rating of {{cupcake.rating}}</p>
+                  <img src="{{cupcake.image}}" class="img-thumbnail"></img>
+                  </div>
+              </div>
+            </a>
+          </div>
+    </div>
+</div>
+<div class="container" id="create-cupcake">
+    <div class="form-group">
+        <label for="edit-flavor">Flavor</label>
+        <input type="text" class="form-control" value="{{cupcake.flavor}}" id="edit-flavor" aria-describedby="emailHelp" placeholder="Enter flavor">
+      </div>
+      <div class="form-group">
+        <label for="edit-size">Size</label>
+        <input type="text" class="form-control" id="edit-size" value="{{cupcake.size}}" placeholder="Enter size">
+      </div>
+      <div class="form-group">
+        <label for="edit-rating">Rating</label>
+        <input type="number" class="form-control" id="edit-rating" value="{{cupcake.rating}}" aria-describedby="ratingHelp" placeholder="Enter How Great This Tastes From 1 to 5">
+      </div>
+      <div class="form-group">
+        <label for="edit-url">Image URL</label>
+        <input type="URL" class="form-control" id="edit-url" value="{{cupcake.image}}" placeholder="Paste Image URL of Cupcake Here">
+      </div>
+      <a href="/" class="btn btn-outline-danger my-3" id="cancel-cupcake-edit">Cancel</a>
+      <button class="btn btn-primary my-3" id="edit-cupcake-button"><i id={{cupcake.id}}>Edit Cupcake!</i></button>
+</div>
+{%  endblock  %}z

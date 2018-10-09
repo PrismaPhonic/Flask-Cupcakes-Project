@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-3 text-center mb-5">Cupcakes:</h1>
+    <div class="row" id="cupcakes"></div>
+
+</div>
+<div class="container" id="create-cupcake">
+    <div class="form-group">
+        <label for="flavor">Flavor</label>
+        <input type="text" class="form-control" id="flavor" aria-describedby="emailHelp" placeholder="Enter flavor">
+      </div>
+      <div class="form-group">
+        <label for="size">Size</label>
+        <input type="text" class="form-control" id="size" placeholder="Enter size">
+      </div>
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" class="form-control" id="rating" aria-describedby="ratingHelp" placeholder="Enter How Great This Tastes From 1 to 5">
+      </div>
+      <div class="form-group">
+        <label for="url">Image URL</label>
+        <input type="URL" class="form-control" id="url" placeholder="Paste Image URL of Cupcake Here">
+      </div>
+      <button class="btn btn-primary my-3" id="add-cupcake-button">Add Cupcake!</button>
+</div>
+{%  endblock  %}
